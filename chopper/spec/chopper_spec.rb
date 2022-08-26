@@ -42,12 +42,12 @@ describe 'Chopper' do
   it 'sum de [0,0] deberia ser cero' do
     expect(chopper.sum([0, 0])).to eq 'cero'
   end
-  
-=begin # rubocop:disable all
+
   it 'sum de [15] deberia ser uno,cinco' do
     expect(chopper.sum([15])).to eq 'uno,cinco'
   end
 
+=begin # rubocop:disable all
   it 'sum de [20,1,1,1] deberia ser dos,tres' do
     expect(chopper.sum([20, 1, 1, 1])).to eq 'dos,tres'
   end
