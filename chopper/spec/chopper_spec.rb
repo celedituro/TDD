@@ -34,12 +34,12 @@ describe 'Chopper' do
   it 'sum de [50,50] deberia ser demasiado grande' do
     expect(chopper.sum([50, 50])).to eq 'demasiado grande'
   end
-  
-=begin # rubocop:disable all
+
   it 'sum de [50,49] deberia ser nueve,nueve' do
     expect(chopper.sum([50, 49])).to eq 'nueve,nueve'
   end
 
+=begin # rubocop:disable all
   it 'sum de [0,0] deberia ser cero' do
     expect(chopper.sum([0, 0])).to eq 'cero'
   end

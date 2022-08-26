@@ -17,11 +17,18 @@ class Chopper
     if array.empty?
       'vacio'
     else
-      nums = {1 => 'uno', 4 => 'cuatro', 18 => 'uno,ocho', 100 => 'demasiado grande'}
+      nums = {1 => 'uno',
+              4 => 'cuatro',
+              8 => 'ocho',
+              18 => 'uno,ocho',
+              99 => 'nueve,nueve',
+              100 => 'demasiado grande'}
+
       sum = 0
       array.each do |num|
         sum += num
       end
+
       nums[sum]
     end
   end
