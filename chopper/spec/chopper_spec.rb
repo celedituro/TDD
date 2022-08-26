@@ -47,9 +47,7 @@ describe 'Chopper' do
     expect(chopper.sum([15])).to eq 'uno,cinco'
   end
 
-=begin # rubocop:disable all
   it 'sum de [20,1,1,1] deberia ser dos,tres' do
     expect(chopper.sum([20, 1, 1, 1])).to eq 'dos,tres'
   end
-=end # rubocop:enable all
 end
