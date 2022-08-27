@@ -6,3 +6,6 @@
 4. Realizo una implementacion basica de la entrada, validacion y salida de datos en app.rb asi del objeto Alquiler para relacionar la entrada con la salida de datos.
 6. Creo algunos tests simples para la cubertura del codigo implementado.
 7. Realizo un primer commit para cumplir con la integracion continua y pusheo.
+8. Modifico la implementacion de los importes por alquiler.
+9. Agrego la funcionalidad de descuento con sus respetivos tests.
+10. Realizo commit y push.

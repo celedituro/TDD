@@ -2,7 +2,7 @@ require_relative './model/alquiler'
 
 fecha_alquiler = ARGV[0]
 fecha_devolucion = ARGV[1]
-cuit = ARGV[2].to_i
+cuit = ARGV[2]
 tipo_alquiler = ARGV[3]
 param_alquiler = ARGV[4].to_i
 
@@ -16,14 +16,8 @@ if tipo_alquiler != 'h' && tipo_alquiler != 'd' && tipo_alquiler != 'k'
   exit 1
 end
 
-alquiler = if tipo_alquiler == 'h'
-             AlquilerHora.new(fecha_alquiler, fecha_devolucion, cuit, param_alquiler)
-           elsif tipo_alquiler == 'd'
-             AlquilerDia.new(fecha_alquiler, fecha_devolucion, cuit, param_alquiler)
-           else
-             AlquilerKm.new(fecha_alquiler, fecha_devolucion, cuit, param_alquiler)
-           end
+alquiler = Alquiler.new(fecha_alquiler, fecha_devolucion, cuit, tipo_alquiler, param_alquiler)
 
-importe = alquiler.importe
+importe = alquiler.importe_total
 
 puts "importe: #{importe}"
