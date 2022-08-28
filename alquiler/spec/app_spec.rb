@@ -21,9 +21,4 @@ describe 'App' do
     resultado = `ruby app.rb 20190119 20190119 20112223336 j 3`
     expect(resultado.strip).to eq 'Error tipo_alquiler: Ingresar h, d o k'
   end
-
-  it 'se ingresa tipo de taller valido' do
-    resultado = `ruby app.rb 20190119 20190119 20112223336 h 3`
-    expect(resultado.strip).to eq 'importe: 300'
-  end
 end

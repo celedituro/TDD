@@ -22,7 +22,7 @@ describe 'Alquiler' do
     expect(alquiler.importe_total).to eq 285
   end
 
-  it 'empre alquila 3 dias y el importe es 5700' do
+  it 'empresa alquila 3 dias y el importe es 5700' do
     alquiler = Alquiler.new("20190119", "20190119", "26112223336", 'd', 3)
     expect(alquiler.importe_total).to eq 5700
   end
@@ -30,6 +30,26 @@ describe 'Alquiler' do
   it 'empresa alquila por 1000 km y el importe es 9595' do
     alquiler = Alquiler.new("20190119", "20190119", "26112223336", 'k', 1000)
     expect(alquiler.importe_total).to eq 9595
+  end
+
+  it 'se alquila 3 dias, se devuelve tarde y el importe es 12000' do
+    alquiler = Alquiler.new("20190119", "20190125", "20112223336", 'd', 3)
+    expect(alquiler.importe_total).to eq 12000
+  end
+
+  it 'se alquila 3 dias, se devuelve antes y el importe es 6000' do
+    alquiler = Alquiler.new("20190119", "20190121", "20112223336", 'd', 3)
+    expect(alquiler.importe_total).to eq 6000
+  end
+
+  it 'empresa alquila 3 dias, lo devuelve tarde y el importe es 550' do
+    alquiler = Alquiler.new("20190119", "20190125", "26112223336", 'd', 3)
+    expect(alquiler.importe_total).to eq 11400
+  end
+
+  it 'se alquila 3 dias, se devuelve antes y el importe es 5700' do
+    alquiler = Alquiler.new("20190119", "20190121", "26112223336", 'd', 3)
+    expect(alquiler.importe_total).to eq 5700
   end
 
 end
