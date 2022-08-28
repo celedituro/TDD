@@ -16,7 +16,13 @@ if tipo_alquiler != 'h' && tipo_alquiler != 'd' && tipo_alquiler != 'k'
   exit 1
 end
 
-alquiler = Alquiler.new(fecha_alquiler, fecha_devolucion, cuit, tipo_alquiler, param_alquiler)
+alquiler = if tipo_alquiler == 'h'
+             AlquilerHora.new(fecha_alquiler, fecha_devolucion, cuit, param_alquiler)
+           elsif tipo_alquiler == 'd'
+             AlquilerDia.new(fecha_alquiler, fecha_devolucion, cuit, param_alquiler)
+           else
+             AlquilerKm.new(fecha_alquiler, fecha_devolucion, cuit, param_alquiler)
+           end
 
 importe = alquiler.importe_total
 
