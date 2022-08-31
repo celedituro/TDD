@@ -1,0 +1,40 @@
+require 'rspec'
+
+describe 'App' do
+
+  xit '01-Humano-con-espada vs Humano-con-espada en estadio => empate' do
+    result = `ruby app.rb estadio humano espada humano espada`
+    expect(result.strip).to eq 'Resultado: empate'
+  end
+
+  xit '02-Humano-con-espada vs Humano-con-mano en estadio => gana 1' do
+    result = `ruby app.rb estadio humano espada humano mano`
+    expect(result.strip).to eq 'Resultado: gana 1'
+  end
+
+  xit '03-Humano-con-mano vs Lobo-con-mano en estadio => gana 2' do
+    result = `ruby app.rb estadio humano mano lobo mano`
+    expect(result.strip).to eq 'Resultado: gana 2'
+  end
+
+  xit '04-Humano-con-espada vs Lobo-con-mano en ciudad => gana 1' do
+    result = `ruby app.rb ciudad humano espada lobo mano`
+    expect(result.strip).to eq 'Resultado: gana 2'
+  end
+
+  xit '05-Vampiro-con-espada vs Lobo-con-mano en noche => gana 1' do
+    result = `ruby app.rb noche vampiro espada lobo mano`
+    expect(result.strip).to eq 'Resultado: gana 1'
+  end
+
+  xit '06-Vampiro-con-cuchillo vs Lobo-con-mano en lluvia => gana 2' do
+    result = `ruby app.rb lluvia vampiro cuchillo lobo mano`
+    expect(result.strip).to eq 'Resultado: gana 2'
+  end
+
+  xit '07- escenario desconocido lanza error' do
+    result = `ruby app.rb ningun_lugar humano mano humano mano`
+    expect(result.strip).to eq 'error: escenario desconocido'
+  end
+
+end
