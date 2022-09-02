@@ -12,7 +12,7 @@ describe 'App' do
     expect(result.strip).to eq 'Resultado: gana 1'
   end
 
-  xit '03-Humano-con-mano vs Lobo-con-mano en estadio => gana 2' do
+  it '03-Humano-con-mano vs Lobo-con-mano en estadio => gana 2' do
     result = `ruby app.rb estadio humano mano lobo mano`
     expect(result.strip).to eq 'Resultado: gana 2'
   end

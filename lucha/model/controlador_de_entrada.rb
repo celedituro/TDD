@@ -1,14 +1,27 @@
 class ControladorDeEntrada
-  def obtener_luchadores(arma_luchador1, arma_luchador2)
-    armas = []
-    armas.push(arma_luchador1, arma_luchador2)
+  def crear_humano(arma)
+    if arma == 'espada'
+      Humano.new(true)
+    else
+      Humano.new(false)
+    end
+  end
 
+  def crear_lobo(arma)
+    if arma == 'espada'
+      Lobo.new(true)
+    else
+      Lobo.new(false)
+    end
+  end
+
+  def obtener_luchadores(lista_luchadores)
     luchadores = []
-    armas.each do |arma|
-      if arma == 'espada'
-        luchadores.push(LuchadorConArma.new)
+    lista_luchadores.each do |luchador|
+      if luchador[0] == 'humano'
+        luchadores.push(crear_humano(luchador[1]))
       else
-        luchadores.push(LuchadorSinArma.new)
+        luchadores.push(crear_lobo(luchador[1]))
       end
     end
     luchadores

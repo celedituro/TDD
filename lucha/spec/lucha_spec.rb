@@ -10,4 +10,9 @@ describe 'Lucha' do
     lucha = Lucha.new
     expect(lucha.obtener_resultado(LuchadorConArma.new, LuchadorSinArma.new)).to eq 'gana 1'
   end
+
+  it '03-Humano-sin-arma vs Lobo-sin-arma => gana 2' do
+    lucha = Lucha.new
+    expect(lucha.obtener_resultado(Humano.new(false), Lobo.new(false))).to eq 'gana 2'
+  end
 end
