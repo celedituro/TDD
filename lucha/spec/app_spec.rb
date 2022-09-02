@@ -2,7 +2,7 @@ require 'rspec'
 
 describe 'App' do
 
-  xit '01-Humano-con-espada vs Humano-con-espada en estadio => empate' do
+  it '01-Humano-con-espada vs Humano-con-espada en estadio => empate' do
     result = `ruby app.rb estadio humano espada humano espada`
     expect(result.strip).to eq 'Resultado: empate'
   end
