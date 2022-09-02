@@ -1,3 +1,5 @@
 class Lucha
-  def initialize; end
+  def obtener_puntaje
+    'empate'
+  end
 end
