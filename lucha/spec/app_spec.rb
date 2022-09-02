@@ -7,7 +7,7 @@ describe 'App' do
     expect(result.strip).to eq 'Resultado: empate'
   end
 
-  xit '02-Humano-con-espada vs Humano-con-mano en estadio => gana 1' do
+  it '02-Humano-con-espada vs Humano-con-mano en estadio => gana 1' do
     result = `ruby app.rb estadio humano espada humano mano`
     expect(result.strip).to eq 'Resultado: gana 1'
   end

@@ -1,9 +1,14 @@
 require 'spec_helper'
 
 describe 'Lucha' do
-  let(:lucha) { Lucha.new }
 
-  it '01-Luchador 1 vs Luchador 2 => empate' do
-    expect(lucha.obtener_resultado).to eq 'empate'
+  it '01-Luchador-con-arma vs Luchador-con-arma => empate' do
+    lucha = Lucha.new
+    expect(lucha.obtener_resultado('espada', 'espada')).to eq 'empate'
+  end
+
+  it '02-Luchador-con-arma vs Luchador-sin-arma => puntaje-1 mayor que puntaje-2' do
+    lucha = Lucha.new
+    expect(lucha.obtener_resultado('espada', 'mano')).to eq 'gana 1'
   end
 end
