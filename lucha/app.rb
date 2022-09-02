@@ -5,7 +5,7 @@ _luchador1 = ARGV[0]
 _luchador2 = ARGV[1]
 
 # Capa que implementa la logica de negocio
-resultado = Lucha.new.obtener_puntaje
+resultado = Lucha.new.obtener_resultado
 
 # Capa que muestra el resultado
 puts "Resultado: #{resultado}"
