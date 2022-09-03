@@ -1,43 +1,31 @@
 class Luchador
-  def puntaje; end
-end
-
-class LuchadorConArma < Luchador
-  def puntaje
-    2
-  end
-end
-
-class LuchadorSinArma < Luchador
-  def puntaje
-    0
-  end
-end
-
-class Humano < Luchador
+  PUNTOS_HUMANO = 1
+  PUNTOS_LOBO = 3
+  PUNTOS_ARMA = 2
+  PUNTOS_SIN_ARMA = 0
   def initialize(esta_armado)
     @esta_armado = esta_armado
   end
 
+  def puntaje; end
+end
+
+class Humano < Luchador
   def puntaje
     if @esta_armado == true
-      2
+      PUNTOS_HUMANO * PUNTOS_ARMA
     else
-      1
+      PUNTOS_HUMANO + PUNTOS_SIN_ARMA
     end
   end
 end
 
 class Lobo < Luchador
-  def initialize(esta_armado)
-    @esta_armado = esta_armado
-  end
-
   def puntaje
     if @esta_armado == true
-      3 * 2
+      PUNTOS_LOBO * PUNTOS_ARMA
     else
-      3
+      PUNTOS_LOBO + PUNTOS_SIN_ARMA
     end
   end
 end
