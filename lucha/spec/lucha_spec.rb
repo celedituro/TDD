@@ -50,4 +50,9 @@ describe 'Lucha' do
     lucha = Lucha.new(Noche.new)
     expect(lucha.resultado(Vampiro.new(Mano.new), Lobo.new(Espada.new))).to eq 'gana 2'
   end
+
+  it '11-Humano-con-espada vs Lobo-con-cuchillo en bosque => empate' do
+    lucha = Lucha.new(Bosque.new)
+    expect(lucha.resultado(Humano.new(Espada.new), Lobo.new(Cuchillo.new))).to eq 'gana 2'
+  end
 end
