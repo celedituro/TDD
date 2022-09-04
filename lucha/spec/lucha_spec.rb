@@ -30,4 +30,9 @@ describe 'Lucha' do
     lucha = Lucha.new
     expect(lucha.resultado(Lobo.new(true), Humano.new(false), 'ciudad')).to eq 'gana 1'
   end
+
+  it 'Vampiro-con-cuchillo vs Lobo-con-mano en lluvia => gana 2' do
+    lucha = Lucha.new
+    expect(lucha.resultado(Vampiro.new(true), Lobo.new(false), 'lluvia')).to eq 'gana 2'
+  end
 end

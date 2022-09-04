@@ -1,6 +1,7 @@
 class Luchador
   PUNTOS_HUMANO = 1
   PUNTOS_LOBO = 3
+  PUNTOS_VAMPIRO = 2
   PUNTOS_ARMA = 2
   PUNTOS_SIN_ARMA = 0
   CIUDAD = 'ciudad'.freeze
@@ -48,5 +49,30 @@ class Lobo < Luchador
   def initialize(esta_armado)
     super
     @puntos = PUNTOS_LOBO
+  end
+end
+
+class Vampiro < Luchador
+  def initialize(esta_armado)
+    super
+    @puntos = PUNTOS_VAMPIRO
+  end
+
+  def factor_escenario(escenario)
+    factor = 0
+    factor = -1 if escenario == 'lluvia'
+    factor
+  end
+
+  def puntos_por_escenario(escenario)
+    @puntos + factor_escenario(escenario)
+  end
+
+  def puntos_por_arma
+    if @esta_armado
+      @puntos + PUNTOS_ARMA
+    else
+      @puntos + PUNTOS_SIN_ARMA
+    end
   end
 end
