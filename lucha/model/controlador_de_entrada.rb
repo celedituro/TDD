@@ -14,7 +14,7 @@ class ControladorDeEntrada
     end
   end
 
-  def obtener_luchadores(lista_luchadores)
+  def luchadores(lista_luchadores)
     luchadores = []
     lista_luchadores.each do |luchador|
       tipo = luchador[0]

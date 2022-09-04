@@ -10,10 +10,10 @@ tipo_luchador2 = ARGV[3]
 arma_luchador2 = ARGV[4]
 
 lista_luchadores = [[tipo_luchador1, arma_luchador1], [tipo_luchador2, arma_luchador2]]
-luchadores = ControladorDeEntrada.new.obtener_luchadores(lista_luchadores)
+luchadores = ControladorDeEntrada.new.luchadores(lista_luchadores)
 
 # Capa que implementa la logica de negocio
-resultado = Lucha.new.obtener_resultado(luchadores[0], luchadores[1], escenario)
+resultado = Lucha.new.resultado(luchadores[0], luchadores[1], escenario)
 
 # Capa que muestra el resultado
 puts "Resultado: #{resultado}"

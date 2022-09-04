@@ -3,10 +3,18 @@ class Lucha
   GANA_1 = 'gana 1'.freeze
   GANA_2 = 'gana 2'.freeze
 
-  def obtener_resultado(luchador1, luchador2, escenario)
-    if luchador1.puntaje(escenario) == luchador2.puntaje(escenario)
+  def empate(luchador1, luchador2, escenario)
+    luchador1.puntaje(escenario) == luchador2.puntaje(escenario)
+  end
+
+  def puntaje_1_mayor(luchador1, luchador2, escenario)
+    luchador1.puntaje(escenario) > luchador2.puntaje(escenario)
+  end
+
+  def resultado(luchador1, luchador2, escenario)
+    if empate(luchador1, luchador2, escenario)
       EMPATE
-    elsif luchador1.puntaje(escenario) > luchador2.puntaje(escenario)
+    elsif puntaje_1_mayor(luchador1, luchador2, escenario)
       GANA_1
     else
       GANA_2
