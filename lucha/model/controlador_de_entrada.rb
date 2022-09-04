@@ -1,5 +1,6 @@
 class ControladorDeEntrada
   HUMANO = 'humano'.freeze
+  LOBO = 'lobo'.freeze
   ESPADA = 'espada'.freeze
 
   def esta_armado(arma)
@@ -9,8 +10,10 @@ class ControladorDeEntrada
   def crear_luchador(esta_armado, tipo_luchador)
     if tipo_luchador == HUMANO
       Humano.new(esta_armado)
-    else
+    elsif tipo_luchador == LOBO
       Lobo.new(esta_armado)
+    else
+      Vampiro.new(esta_armado)
     end
   end
 

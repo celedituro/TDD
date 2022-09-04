@@ -51,4 +51,14 @@ describe 'Luchador' do
     vampiro = Vampiro.new(false)
     expect(vampiro.puntaje('ciudad')).to eq 4
   end
+
+  it '11-Vampiro-con-espada en estadio => puntaje = 6' do
+    vampiro = Vampiro.new(true)
+    expect(vampiro.puntaje('estadio')).to eq 6
+  end
+
+  it '12-Vampiro-con-cuchillo en noche => puntaje = 8' do
+    vampiro = Vampiro.new(true)
+    expect(vampiro.puntaje('noche')).to eq 8
+  end
 end

@@ -59,13 +59,21 @@ class Vampiro < Luchador
   end
 
   def factor_escenario(escenario)
-    factor = 0
-    factor = -1 if escenario == 'lluvia'
-    factor
+    if escenario == 'lluvia'
+      -1
+    elsif escenario == 'noche'
+      2
+    else
+      0
+    end
   end
 
   def puntos_por_escenario(escenario)
-    @puntos + factor_escenario(escenario)
+    if escenario == 'noche'
+      @puntos * factor_escenario(escenario)
+    else
+      @puntos + factor_escenario(escenario)
+    end
   end
 
   def puntos_por_arma

@@ -25,4 +25,14 @@ describe 'ControladorDeEntrada' do
     luchadores = ControladorDeEntrada.new.luchadores([['humano', 'espada'], ['lobo', 'mano']])
     expect([luchadores[0].class, luchadores[1].class]).to eq [Humano, Lobo]
   end
+
+  it '06-Recibe 2 Vampiro-con-cuchillo y obtiene una lista con 2 Vampiro' do
+    luchadores = ControladorDeEntrada.new.luchadores([['vampiro', 'cuchillo'], ['vampiro', 'cuchillo']])
+    expect([luchadores[0].class, luchadores[1].class]).to eq [Vampiro, Vampiro]
+  end
+
+  it '07-Recibe Humano-con-espada y Vampiro-con-mano y obtiene una lista con Humano y Vampiro' do
+    luchadores = ControladorDeEntrada.new.luchadores([['humano', 'espada'], ['vampiro', 'mano']])
+    expect([luchadores[0].class, luchadores[1].class]).to eq [Humano, Vampiro]
+  end
 end
