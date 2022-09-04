@@ -27,7 +27,7 @@ describe 'App' do
     expect(result.strip).to eq 'Resultado: gana 1'
   end
 
-  xit '06-Vampiro-con-cuchillo vs Lobo-con-mano en lluvia => gana 2' do
+  it '06-Vampiro-con-cuchillo vs Lobo-con-mano en lluvia => gana 2' do
     result = `ruby app.rb lluvia vampiro cuchillo lobo mano`
     expect(result.strip).to eq 'Resultado: gana 2'
   end
@@ -36,5 +36,4 @@ describe 'App' do
     result = `ruby app.rb ningun_lugar humano mano humano mano`
     expect(result.strip).to eq 'error: escenario desconocido'
   end
-
 end
