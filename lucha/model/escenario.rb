@@ -9,8 +9,9 @@ class Estadio < Escenario
 end
 
 class Ciudad < Escenario
+  HUMANO = 'humano'.freeze
   def puntos_por_escenario(tipo_luchador, puntos)
-    if tipo_luchador == 'humano'
+    if tipo_luchador == HUMANO
       puntos * 2
     else
       puntos
@@ -19,9 +20,11 @@ class Ciudad < Escenario
 end
 
 class Bosque < Escenario
+  LOBO = 'lobo'.freeze
+  FACTOR_BOSQUE = 3
   def puntos_por_escenario(tipo_luchador, puntos)
-    if tipo_luchador == 'lobo'
-      puntos * 3
+    if tipo_luchador == LOBO
+      puntos * FACTOR_BOSQUE
     else
       puntos
     end
@@ -29,9 +32,11 @@ class Bosque < Escenario
 end
 
 class Noche < Escenario
+  VAMPIRO = 'vampiro'.freeze
+  FACTOR_NOCHE = 2
   def puntos_por_escenario(tipo_luchador, puntos)
-    if tipo_luchador == 'vampiro'
-      puntos * 2
+    if tipo_luchador == VAMPIRO
+      puntos * FACTOR_NOCHE
     else
       puntos
     end
@@ -39,9 +44,11 @@ class Noche < Escenario
 end
 
 class Lluvia < Escenario
+  VAMPIRO = 'vampiro'.freeze
+  FACTOR_LLUVIA = 1
   def puntos_por_escenario(tipo_luchador, puntos)
-    if tipo_luchador == 'vampiro'
-      puntos - 1
+    if tipo_luchador == VAMPIRO
+      puntos - FACTOR_LLUVIA
     else
       puntos
     end
