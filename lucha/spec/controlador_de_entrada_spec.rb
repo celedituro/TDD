@@ -91,4 +91,9 @@ describe 'ControladorDeEntrada' do
     escenario = ControladorDeEntrada.new.escenario('noche')
     expect(escenario.class).to eq Noche
   end
+
+  it '19-Recibe Escenario Invalido y lanza error' do
+    error = ControladorDeEntrada.new.escenario('ningun_lugar')
+    expect(error).to eq 'error: escenario desconocido'
+  end
 end

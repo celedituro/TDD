@@ -32,7 +32,7 @@ describe 'App' do
     expect(result.strip).to eq 'Resultado: gana 2'
   end
 
-  xit '07- escenario desconocido lanza error' do
+  it '07- escenario desconocido lanza error' do
     result = `ruby app.rb ningun_lugar humano mano humano mano`
     expect(result.strip).to eq 'error: escenario desconocido'
   end

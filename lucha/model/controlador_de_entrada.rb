@@ -50,8 +50,10 @@ class ControladorDeEntrada
       Bosque.new
     elsif escenario == LLUVIA
       Lluvia.new
-    else
+    elsif escenario == NOCHE
       Noche.new
+    else
+      'error: escenario desconocido'
     end
   end
 end
