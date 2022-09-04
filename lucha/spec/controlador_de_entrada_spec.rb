@@ -20,4 +20,9 @@ describe 'ControladorDeEntrada' do
     luchadores = ControladorDeEntrada.new.luchadores([['lobo', 'espada'], ['lobo', 'espada']])
     expect([luchadores[0].class, luchadores[1].class]).to eq [Lobo, Lobo]
   end
+
+  it '05-Recibe Humano-con-arma y Lobo-sin-arma y obtiene una lista con Humano-con-arma y Lobo-sin-arma' do
+    luchadores = ControladorDeEntrada.new.luchadores([['humano', 'espada'], ['lobo', 'mano']])
+    expect([luchadores[0].class, luchadores[1].class]).to eq [Humano, Lobo]
+  end
 end
