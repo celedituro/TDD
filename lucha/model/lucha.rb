@@ -3,8 +3,10 @@ class Lucha
   GANA_1 = 'gana 1'.freeze
   GANA_2 = 'gana 2'.freeze
 
-  def initialize(escenario)
+  def initialize(escenario, luchador1, luchador2)
     @escenario = escenario
+    @luchador1 = luchador1
+    @luchador2 = luchador2
   end
 
   def empate(puntaje1, puntaje2)
@@ -15,9 +17,9 @@ class Lucha
     puntaje1 > puntaje2
   end
 
-  def resultado(luchador1, luchador2)
-    puntaje1 = luchador1.puntaje(@escenario)
-    puntaje2 = luchador2.puntaje(@escenario)
+  def resultado
+    puntaje1 = @luchador1.puntaje(@escenario)
+    puntaje2 = @luchador2.puntaje(@escenario)
 
     if empate(puntaje1, puntaje2)
       EMPATE
