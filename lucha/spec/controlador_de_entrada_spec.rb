@@ -71,7 +71,7 @@ describe 'ControladorDeEntrada' do
   it '12-Recibe Escenario Invalido y lanza error' do
     controlador = ControladorDeEntrada.new(['ningun_lugar', 'humano', 'espada', 'lobo', 'mano'])
     error = controlador.crear_escenario
-    expect(error).to eq 'error: escenario desconocido'
+    expect(error).to eq 'desconocido'
   end
 
   it '13-Crea lucha entre Humano-con-espada y Lobo-con-mano en estadio y devuelve Lucha' do
@@ -79,9 +79,23 @@ describe 'ControladorDeEntrada' do
     expect(controlador.crear_lucha.class).to eq Lucha
   end
 
-  it '14-Crea lucha entre Humano-con-espada y Lobo-con-mano en lugar desconocido y devuelve error' do
-    controlador = ControladorDeEntrada.new(['ningun_lugar', 'humano', 'espada', 'lobo', 'mano'])
-    expect(controlador.crear_lucha.class).to eq String
+  it '14-Recibe Escenario Invalido y lanza error' do
+    controlador = ControladorDeEntrada.new(['hola', 'humano', 'espada', 'lobo', 'mano'])
+    expect(controlador.crear_escenario).to eq 'desconocido'
   end
 
+  it '15-Recibe Escenario Invalido y lanza error' do
+    controlador = ControladorDeEntrada.new(['ningun_lugar', 'humano', 'espada', 'lobo', 'mano'])
+    expect(controlador.es_escenario_valido).to eq false
+  end
+
+  it '16-Recibe Escenario Invalido y lanza error' do
+    controlador = ControladorDeEntrada.new(['lluvia', 'humano', 'espada', 'lobo', 'mano'])
+    expect(controlador.es_escenario_valido).to eq true
+  end
+
+  it '17-Crea lucha entre Humano-con-espada y Lobo-con-mano en estadio y devuelve Lucha' do
+    controlador = ControladorDeEntrada.new(['nada', 'humano', 'espada', 'lobo', 'mano'])
+    expect(controlador.crear_lucha).to eq 'error: escenario desconocido'
+  end
 end

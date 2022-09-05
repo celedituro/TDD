@@ -7,8 +7,8 @@ require_relative './model/escenario'
 ESCENARIO_DESCONOCIDO_ERROR = 'error: escenario desconocido'.freeze
 
 controlador = ControladorDeEntrada.new(ARGV)
-lucha = controlador.crear_lucha
 
+lucha = controlador.crear_lucha
 if lucha == ESCENARIO_DESCONOCIDO_ERROR
   puts ESCENARIO_DESCONOCIDO_ERROR
 else

@@ -11,6 +11,8 @@ class ControladorDeEntrada
   LLUVIA = 'lluvia'.freeze
   NOCHE = 'noche'.freeze
 
+  DESCONOCIDO = 'desconocido'.freeze
+
   def initialize(argumentos)
     @escenario = argumentos[0]
     @tipo_luchador1 = argumentos[1]
@@ -39,14 +41,9 @@ class ControladorDeEntrada
     end
   end
 
-  def crear_lucha
-    if crear_escenario == 'error: escenario desconocido'
-      'error: escenario desconocido'
-    else
-      luchador1 = crear_luchador(@tipo_luchador1, @arma_luchador1)
-      luchador2 = crear_luchador(@tipo_luchador2, @arma_luchador2)
-      Lucha.new(crear_escenario, luchador1, luchador2)
-    end
+  def es_escenario_valido
+    @escenario == ESTADIO || @escenario == CIUDAD || @escenario == BOSQUE ||
+      @escenario == LLUVIA || @escenario == NOCHE
   end
 
   def crear_escenario
@@ -61,7 +58,18 @@ class ControladorDeEntrada
     elsif @escenario == NOCHE
       Noche.new
     else
+      DESCONOCIDO
+    end
+  end
+
+  def crear_lucha
+    escenario = crear_escenario
+    if escenario == DESCONOCIDO
       'error: escenario desconocido'
+    else
+      luchador1 = crear_luchador(@tipo_luchador1, @arma_luchador1)
+      luchador2 = crear_luchador(@tipo_luchador2, @arma_luchador2)
+      Lucha.new(escenario, luchador1, luchador2)
     end
   end
 end
