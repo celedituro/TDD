@@ -1,12 +1,10 @@
 require_relative './model/calculador_ci'
 require_relative './model/calculador_vm'
+require_relative './model/controlador_de_entrada'
 
-args = ARGV[0]
+controlador = ControladorDeEntrada.new(ARGV[0])
 
-cilindrada = args[5..8].to_i
-km = args[10..14].to_i
-
-valor_ci = CalculadorCI.new.calcular(cilindrada)
-valor_vm = CalculadorVM.new.calcular(valor_ci, km)
+valor_ci = CalculadorCI.new.calcular(controlador.cilindrada)
+valor_vm = CalculadorVM.new.calcular(valor_ci, controlador.kilometraje)
 
 puts "ci:#{valor_ci} & vm:#{valor_vm}"
