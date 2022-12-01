@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'CalculadorCI' do
+describe 'Calculador del coeficiente impositivo' do
   let(:calculador_ci) { CalculadorCI.new }
 
   it 'recibe 1000 de cilindrada y devuelve 1' do

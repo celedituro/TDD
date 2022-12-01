@@ -19,3 +19,8 @@ En este archivo voy a escribir los pasos que voy realizando para resolver el eje
 14. Commiteo y pusheo
 15. Refactorizo agregando los tests y luego la implementación del presentador de resultado
 16. Commiteo y pusheo
+17. Agrego tests de aceptación
+18. Comento el que falla para inciar el ciclo TDD
+19. Agrego test de truncamiento del valor de mercado
+20. Implemento el truncamiento del valor de mercado
+21. Commiteo y pusheo
