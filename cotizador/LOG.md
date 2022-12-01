@@ -15,3 +15,7 @@ En este archivo voy a escribir los pasos que voy realizando para resolver el eje
 10. Commiteo y pusheo
 11. Hago pasar el primer test de aceptación, invocando a los calculadores en app.rb
 12. Commiteo y pusheo
+13. Refactorizo agregando los tests y luego la implementación del controlador de entrada
+14. Commiteo y pusheo
+15. Refactorizo agregando los tests y luego la implementación del presentador de resultado
+16. Commiteo y pusheo
