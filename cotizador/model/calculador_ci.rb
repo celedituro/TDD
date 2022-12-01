@@ -1,5 +1,5 @@
 class CalculadorCI
-  def calcular(cilindrada)
-    (1000 * cilindrada) / 1_000_000
+  def calcular(tipo, cilindrada)
+    (tipo.precio_base * cilindrada) / 1_000_000
   end
 end
