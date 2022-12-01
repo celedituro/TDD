@@ -13,3 +13,5 @@ En este archivo voy a escribir los pasos que voy realizando para resolver el eje
 8. Hago que el test pase mediante una implementación básica del calculador del vm
 9. Refactorizo la implementación del calculador del vm a medida que agrego más tests
 10. Commiteo y pusheo
+11. Hago pasar el primer test de aceptación, invocando a los calculadores en app.rb
+12. Commiteo y pusheo
