@@ -7,3 +7,9 @@ class Auto < TipoVehiculo
     @precio_base = 1000
   end
 end
+
+class Camioneta < TipoVehiculo
+  def initialize
+    @precio_base = 1500
+  end
+end

@@ -2,6 +2,8 @@ require_relative './model/calculador_ci'
 require_relative './model/calculador_vm'
 require_relative './model/controlador_de_entrada'
 require_relative './model/presentador_de_resultado'
+require_relative './model/factory_tipo_vehiculo'
+require_relative './model/tipo_vehiculo'
 
 controlador = ControladorDeEntrada.new(ARGV[0])
 

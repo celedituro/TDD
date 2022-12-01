@@ -1,4 +1,3 @@
-require_relative './tipo_vehiculo'
 class ControladorDeEntrada
   CANT_ARGS = 3
   INDICE_TIPO = 0
@@ -9,7 +8,7 @@ class ControladorDeEntrada
 
   def initialize(args)
     args = args.split('/', CANT_ARGS)
-    @tipo = Auto.new
+    @tipo = FactoryTipoVehiculo.new.tipo(args[INDICE_TIPO].delete('/'))
     @cilindrada = args[INDICE_CILINDRADA].delete('/').to_i
     @kilometraje = args[INDICE_KILOMETRAJE].delete('/').to_i
   end
