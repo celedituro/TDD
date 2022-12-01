@@ -23,4 +23,8 @@ describe 'Calculador del valor de mercado' do
     expect(calculador_vm.calcular(2, 2000)).to eq 666.6
   end
 
+  it 'recibe 2 de ci y 4700 de km y devuelve 350.8' do
+    expect(calculador_vm.calcular(2, 4700)).to eq 350.8
+  end
+
 end
