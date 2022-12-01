@@ -9,3 +9,7 @@ En este archivo voy a escribir los pasos que voy realizando para resolver el eje
 4. Hago que el test pase mediante una implementación básica del calculador del ci
 5. Refactorizo la implementación del calculador del ci a medida que agrego más tests
 6. Commiteo y pusheo
+7. Agrego un primer test básico del calculador del valor de mercado, siguiendo la práctica TDD
+8. Hago que el test pase mediante una implementación básica del calculador del vm
+9. Refactorizo la implementación del calculador del vm a medida que agrego más tests
+10. Commiteo y pusheo
