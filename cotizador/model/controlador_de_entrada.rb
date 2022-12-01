@@ -7,9 +7,13 @@ class ControladorDeEntrada
   attr_reader :cilindrada, :kilometraje, :tipo
 
   def initialize(args)
-    args = args.split('/', CANT_ARGS)
-    @tipo = FactoryTipoVehiculo.new.tipo(args[INDICE_TIPO].delete('/'))
-    @cilindrada = args[INDICE_CILINDRADA].delete('/').to_i
-    @kilometraje = args[INDICE_KILOMETRAJE].delete('/').to_i
+    @args = args.split('/', CANT_ARGS)
+    @tipo = FactoryTipoVehiculo.new.tipo(parsear(INDICE_TIPO))
+    @cilindrada = parsear(INDICE_CILINDRADA).to_i
+    @kilometraje = parsear(INDICE_KILOMETRAJE).to_i
+  end
+
+  def parsear(idx)
+    @args[idx].delete('/')
   end
 end
