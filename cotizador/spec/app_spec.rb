@@ -37,14 +37,24 @@ describe 'App' do
     expect(result.strip).to eq 'ci:2 & vm:1153.8'
   end
 
-  it '08 - Ingreso camioneta, 2000 de cilindrada y 1000 km y obtengo 3 de ci y 1125.0 de vm' do
+  it '08 - Ingreso camioneta, 2000 de cilindrada y 1000 km y obtengo 3 de ci y 1500.0 de vm' do
     result = `ruby app.rb camioneta/2000/1000`
     expect(result.strip).to eq 'ci:3 & vm:1500.0'
   end
 
-  xit '09 - Ingreso camion, 1000 de cilindrada y 1000 km y obtengo 2 de ci y 1000.0 de vm' do
+  it '09 - Ingreso camion, 1000 de cilindrada y 1000 km y obtengo 2 de ci y 1000.0 de vm' do
     result = `ruby app.rb camion/1000/1000`
     expect(result.strip).to eq 'ci:2 & vm:1000.0'
+  end
+
+  it '10 - Ingreso camion, 1600 de cilindrada y 1000 km y obtengo 3 de ci y 1153.8 de vm' do
+    result = `ruby app.rb camion/1600/1000`
+    expect(result.strip).to eq 'ci:3 & vm:1153.8'
+  end
+
+  it '11 - Ingreso camion, 2000 de cilindrada y 1000 km y obtengo 4 de ci y 1333.3 de vm' do
+    result = `ruby app.rb camion/2000/1000`
+    expect(result.strip).to eq 'ci:4 & vm:1333.3'
   end
 
 end

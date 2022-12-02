@@ -31,4 +31,10 @@ En este archivo voy a escribir los pasos que voy realizando para resolver el eje
 26. Implemento la lógica del cálculo del valor de mercado de cada tipo de vehículo 
 27. Hago pasar el test de aceptación 
 28. Commiteo y pusheo
+29. Agrego tests de aceptación del tipo de vehiculo camion
+30. Comento el test de aceptación para entrar en el ciclo TDD 
+31. Comienzo con los tests del cálculo del valor de mercado para el camion 
+32. Implemento la lógica del cálculo del valor de mercado del camion 
+33. Hago pasar el test de aceptación 
+34. Commiteo y pusheo
 
