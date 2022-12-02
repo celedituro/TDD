@@ -1,4 +1,4 @@
-class PresentadorResultado
+class PresentadorDeResultado
   def initialize(coef_impositivo, valor_mercado)
     @valor_ci = coef_impositivo
     @valor_vm = valor_mercado

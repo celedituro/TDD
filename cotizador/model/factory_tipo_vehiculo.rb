@@ -1,3 +1,5 @@
+require_relative './errors/tipo_vehiculo_invalido'
+
 class FactoryTipoVehiculo
   def initialize
     @tipos = {'auto' => Auto.new.clone,
@@ -5,7 +7,9 @@ class FactoryTipoVehiculo
               'camion' => Camion.new.clone}
   end
 
-  def tipo(un_tipo)
+  def crear_vehiculo(un_tipo)
+    raise TipoVehiculoInvalido unless @tipos.key?(un_tipo)
+
     @tipos[un_tipo]
   end
 end

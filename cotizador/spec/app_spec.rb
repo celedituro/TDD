@@ -57,4 +57,9 @@ describe 'App' do
     expect(result.strip).to eq 'ci:4 & vm:1333.3'
   end
 
+  xit '12 - Ingreso moto, 1000 de cilindrada y 1000 km y obtengo un error' do
+    result = `ruby app.rb moto/1000/1000`
+    expect{ result.strip }.to raise_error(TipoVehiculoInvalido)
+  end
+
 end
