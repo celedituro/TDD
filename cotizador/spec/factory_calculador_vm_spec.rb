@@ -12,4 +12,8 @@ describe 'Factory calculador de valor de mercado' do
     expect(factory.calculador(Camioneta.new).class).to eq CalculadorVMCamioneta
   end
 
+  it 'recibe un camion y devuelve una instancia de CalculadorVmCamion' do
+    factory = FactoryCalculadorVM.new
+    expect(factory.calculador(Camion.new).class).to eq CalculadorVMCamion
+  end
 end

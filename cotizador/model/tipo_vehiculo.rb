@@ -15,3 +15,10 @@ class Camioneta < TipoVehiculo
     @nombre = 'camioneta'
   end
 end
+
+class Camion < TipoVehiculo
+  def initialize
+    @precio_base = 2000
+    @nombre = 'camion'
+  end
+end

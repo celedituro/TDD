@@ -1,6 +1,8 @@
 class FactoryTipoVehiculo
   def initialize
-    @tipos = {'auto' => Auto.new.clone, 'camioneta' => Camioneta.new.clone}
+    @tipos = {'auto' => Auto.new.clone,
+              'camioneta' => Camioneta.new.clone,
+              'camion' => Camion.new.clone}
   end
 
   def tipo(un_tipo)

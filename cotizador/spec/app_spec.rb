@@ -42,4 +42,9 @@ describe 'App' do
     expect(result.strip).to eq 'ci:3 & vm:1500.0'
   end
 
+  xit '09 - Ingreso camion, 1000 de cilindrada y 1000 km y obtengo 2 de ci y 1000.0 de vm' do
+    result = `ruby app.rb camion/1000/1000`
+    expect(result.strip).to eq 'ci:2 & vm:1000.0'
+  end
+
 end

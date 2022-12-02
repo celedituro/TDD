@@ -12,4 +12,9 @@ describe 'Factory tipo de vehiculo' do
     expect(factory.tipo("camioneta").class).to eq Camioneta
   end
 
+  it 'recibe una camion y devuelve una instancia de Camion' do
+    factory = FactoryTipoVehiculo.new
+    expect(factory.tipo("camion").class).to eq Camion
+  end
+
 end

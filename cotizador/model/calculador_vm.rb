@@ -18,7 +18,20 @@ class CalculadorVMCamioneta
 
   def calcular(coef_impositivo, kilometraje, cilindrada)
     numerador = 3 * (coef_impositivo * @tipo.precio_base)
-    denominador = ((kilometraje + cilindrada) * 0.003)
+    denominador = (kilometraje + cilindrada) * 0.003
+    division = numerador / denominador
+    division.to_f.truncate(1)
+  end
+end
+
+class CalculadorVMCamion
+  def initialize
+    @tipo = Camion.new
+  end
+
+  def calcular(coef_impositivo, kilometraje, cilindrada)
+    numerador = coef_impositivo * @tipo.precio_base
+    denominador = (kilometraje + cilindrada) * 0.002
     division = numerador / denominador
     division.to_f.truncate(1)
   end
