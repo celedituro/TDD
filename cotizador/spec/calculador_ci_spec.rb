@@ -15,7 +15,7 @@ describe 'Calculador del coeficiente impositivo' do
     expect(calculador_ci.calcular(Auto.new, 2000)).to eq 2
   end
 
-  it 'recibe camioneta y 1000 de cilindrada y devuelve 2' do
+  it 'recibe camioneta y 1000 de cilindrada y devuelve 1' do
     expect(calculador_ci.calcular(Camioneta.new, 1000)).to eq 1
   end
 

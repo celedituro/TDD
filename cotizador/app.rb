@@ -9,17 +9,16 @@ require_relative './model/errors/tipo_vehiculo_invalido'
 require_relative './model/factory_cilindrada'
 require_relative './model/errors/cilindrada_invalida'
 require_relative './model/parseador_cotizador'
+require_relative './model/cotizador'
 
 begin
   controlador = ControladorDeEntrada.new(ARGV[0])
-  valor_ci = CalculadorCI.new.calcular(controlador.tipo, controlador.cilindrada)
-  calculador_vm = FactoryCalculadorVM.new.calculador(controlador.tipo)
-  valor_vm = calculador_vm.calcular(valor_ci, controlador.kilometraje, controlador.cilindrada)
+  cotizador = Cotizador.new(controlador.tipo, controlador.cilindrada, controlador.kilometraje)
 rescue TipoVehiculoInvalido => e
   puts e
 rescue CilindradaInvalida => e
   puts e
 else
-  presentador = PresentadorDeResultado.new(valor_ci, valor_vm)
+  presentador = PresentadorDeResultado.new(cotizador.calcular_ci, cotizador.calcular_vm)
   puts presentador.resultado
 end
