@@ -13,11 +13,10 @@ require_relative './model/cotizador'
 
 begin
   controlador = ControladorDeEntrada.new(ARGV[0])
-  cotizador = Cotizador.new(controlador.tipo, controlador.cilindrada, controlador.kilometraje)
+  cotizador = Cotizador.new(controlador)
+  presentador = PresentadorDeResultado.new
+  puts presentador.presentar_resultado(cotizador)
 rescue StandardError => e
   presentador = PresentadorDeResultado.new
   puts presentador.presentar_error(e)
-else
-  presentador = PresentadorDeResultado.new
-  puts presentador.presentar_resultado(cotizador)
 end
