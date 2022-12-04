@@ -14,11 +14,10 @@ require_relative './model/cotizador'
 begin
   controlador = ControladorDeEntrada.new(ARGV[0])
   cotizador = Cotizador.new(controlador.tipo, controlador.cilindrada, controlador.kilometraje)
-rescue TipoVehiculoInvalido => e
-  puts e
-rescue CilindradaInvalida => e
-  puts e
+rescue StandardError => e
+  presentador = PresentadorDeResultado.new
+  puts presentador.presentar_error(e)
 else
-  presentador = PresentadorDeResultado.new(cotizador.calcular_ci, cotizador.calcular_vm)
-  puts presentador.resultado
+  presentador = PresentadorDeResultado.new
+  puts presentador.presentar_resultado(cotizador.calcular_ci, cotizador.calcular_vm)
 end
