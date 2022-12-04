@@ -19,5 +19,5 @@ rescue StandardError => e
   puts presentador.presentar_error(e)
 else
   presentador = PresentadorDeResultado.new
-  puts presentador.presentar_resultado(cotizador.calcular_ci, cotizador.calcular_vm)
+  puts presentador.presentar_resultado(cotizador)
 end

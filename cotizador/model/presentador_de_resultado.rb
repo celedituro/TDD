@@ -1,6 +1,6 @@
 class PresentadorDeResultado
-  def presentar_resultado(valor_ci, valor_vm)
-    "ci:#{valor_ci} & vm:#{valor_vm}"
+  def presentar_resultado(cotizador)
+    "ci:#{cotizador.calcular_ci} & vm:#{cotizador.calcular_vm}"
   end
 
   def presentar_error(error)
