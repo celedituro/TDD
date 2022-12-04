@@ -1,0 +1,2 @@
+class KilometrajeInvalido < StandardError
+end

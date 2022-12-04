@@ -10,6 +10,7 @@ require_relative './model/factory_cilindrada'
 require_relative './model/errors/cilindrada_invalida'
 require_relative './model/parseador_cotizador'
 require_relative './model/cotizador'
+require_relative './model/errors/kilometraje_invalido'
 
 begin
   vehiculo = ControladorDeEntrada.new(ARGV[0]).crear_vehiculo

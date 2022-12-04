@@ -25,8 +25,4 @@ describe 'Controlador de entrada' do
     expect{ ControladorDeEntrada.new('auto/3000/1000').crear_vehiculo }.to raise_error(CilindradaInvalida)
   end
 
-  xit 'recibe auto, 3000 de cilindrada y 1000 de kilometraje y devuelve un error' do
-    expect{ ControladorDeEntrada.new('auto/1000/-1000').crear_vehiculo }.to raise_error(KilometrjaeInvalido)
-  end
-
 end

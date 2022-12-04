@@ -1,5 +1,11 @@
+require_relative './errors/kilometraje_invalido'
+
 class Vehiculo
   attr_reader :precio_base, :tipo, :cilindrada, :kilometraje
+
+  def validar_km(kilometraje)
+    raise KilometrajeInvalido if kilometraje.negative?
+  end
 end
 
 class Auto < Vehiculo
@@ -7,7 +13,13 @@ class Auto < Vehiculo
     @precio_base = 1000
     @tipo = 'auto'
     @cilindrada = cilindrada
-    @kilometraje = kilometraje
+    begin
+      validar_km(kilometraje)
+    rescue StandardError => e
+      raise e
+    else
+      @kilometraje = kilometraje
+    end
   end
 end
 
@@ -17,6 +29,7 @@ class Camioneta < Vehiculo
     @tipo = 'camioneta'
     @cilindrada = cilindrada
     @kilometraje = kilometraje
+    validar_km(kilometraje)
   end
 end
 
@@ -26,5 +39,6 @@ class Camion < Vehiculo
     @tipo = 'camion'
     @cilindrada = cilindrada
     @kilometraje = kilometraje
+    validar_km(kilometraje)
   end
 end
