@@ -16,7 +16,7 @@ describe 'Calculador del valor de mercado de auto' do
   end
 
   it 'recibe 1 de ci, 4700 de km y 1000 de cilindrada y devuelve 175.4' do
-    expect(calculador_vm.calcular(1, Auto.new(1000, 4700))).to eq 175.4
+    expect(calculador_vm.calcular(1, Auto.new(1000, 4700))).to eq 175.43859649122805
   end
 
 end
