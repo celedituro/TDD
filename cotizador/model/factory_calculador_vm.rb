@@ -5,7 +5,7 @@ class FactoryCalculadorVM
                      'camion' => CalculadorVMCamion.new.clone}
   end
 
-  def calculador(tipo)
-    @calculadores[tipo.nombre]
+  def calculador(vehiculo)
+    @calculadores[vehiculo.tipo]
   end
 end

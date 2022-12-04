@@ -67,4 +67,9 @@ describe 'App' do
     expect(result.strip).to eq 'CilindradaInvalida'
   end
 
+  xit '14 - Ingreso auto, 1000 de cilindrada y -1000 km y obtengo un error' do
+    result = `ruby app.rb auto/1000/1000`
+    expect(result.strip).to eq 'KilometrajeInvalido'
+  end
+
 end

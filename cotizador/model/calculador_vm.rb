@@ -1,37 +1,25 @@
 class CalculadorVMAuto
-  def initialize
-    @tipo = Auto.new
-  end
-
-  def calcular(coef_impositivo, kilometraje, _cilindrada)
-    numerador = coef_impositivo * @tipo.precio_base
-    denominador = (1 + 0.001 * kilometraje).to_f
+  def calcular(coef_impositivo, vehiculo)
+    numerador = coef_impositivo * vehiculo.precio_base
+    denominador = (1 + 0.001 * vehiculo.kilometraje).to_f
     division = numerador / denominador
     division.to_f.truncate(1)
   end
 end
 
 class CalculadorVMCamioneta
-  def initialize
-    @tipo = Camioneta.new
-  end
-
-  def calcular(coef_impositivo, kilometraje, cilindrada)
-    numerador = 3 * (coef_impositivo * @tipo.precio_base)
-    denominador = (kilometraje + cilindrada) * 0.003
+  def calcular(coef_impositivo, vehiculo)
+    numerador = 3 * (coef_impositivo * vehiculo.precio_base)
+    denominador = (vehiculo.kilometraje + vehiculo.cilindrada) * 0.003
     division = numerador / denominador
     division.to_f.truncate(1)
   end
 end
 
 class CalculadorVMCamion
-  def initialize
-    @tipo = Camion.new
-  end
-
-  def calcular(coef_impositivo, kilometraje, cilindrada)
-    numerador = coef_impositivo * @tipo.precio_base
-    denominador = (kilometraje + cilindrada) * 0.002
+  def calcular(coef_impositivo, vehiculo)
+    numerador = coef_impositivo * vehiculo.precio_base
+    denominador = (vehiculo.kilometraje + vehiculo.cilindrada) * 0.002
     division = numerador / denominador
     division.to_f.truncate(1)
   end

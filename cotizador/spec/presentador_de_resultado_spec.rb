@@ -3,9 +3,9 @@ require 'spec_helper'
 describe 'Presentador de resultado' do
 
   it 'recibe cotizador con auto, 1000, 1000 y devuelve ci:1 & vm:500.0' do
+    vehiculo = Auto.new(1000,1000)
+    cotizador = Cotizador.new(vehiculo)
     presentador = PresentadorDeResultado.new
-    controlador = ControladorDeEntrada.new("auto/1000/1000")
-    cotizador = Cotizador.new(controlador)
     expect(presentador.presentar_resultado(cotizador)).to eq "ci:1 & vm:500.0"
   end
 

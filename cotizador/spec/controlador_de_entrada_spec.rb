@@ -4,45 +4,29 @@ describe 'Controlador de entrada' do
 
   it 'recibe auto, 1000 de cilindrada y 1000 de kilometraje y devuelve 1000 cilindrada' do
     controlador = ControladorDeEntrada.new('auto/1000/1000')
-    expect(controlador.cilindrada).to eq 1000
-  end
-
-  it 'recibe auto, 1000 de cilindrada y 1000 de kilometraje y devuelve 1000 de kilometraje' do
-    controlador = ControladorDeEntrada.new('auto/1000/1000')
-    expect(controlador.kilometraje).to eq 1000
-  end
-
-  it 'recibe auto, 1000 de cilindrada y 1000 de kilometraje y devuelve una instancia de Auto' do
-    controlador = ControladorDeEntrada.new('auto/1000/1000')
-    expect(controlador.tipo.class).to eq Auto
-  end
-
-  it 'recibe auto, 1600 de cilindrada y 1000 de kilometraje y devuelve 1600 de cilindrada' do
-    controlador = ControladorDeEntrada.new('auto/1600/1000')
-    expect(controlador.cilindrada).to eq 1600
-  end
-
-  it 'recibe auto, 1600 de cilindrada y 2000 de kilometraje y devuelve 2000 de kilometraje' do
-    controlador = ControladorDeEntrada.new('auto/1600/2000')
-    expect(controlador.kilometraje).to eq 2000
+    expect(controlador.crear_vehiculo.class).to eq Auto
   end
 
   it 'recibe camioneta, 1000 de cilindrada y 1000 de kilometraje y devuelve una instancia de Camioneta' do
     controlador = ControladorDeEntrada.new('camioneta/1000/1000')
-    expect(controlador.tipo.class).to eq Camioneta
+    expect(controlador.crear_vehiculo.class).to eq Camioneta
   end
 
   it 'recibe camion, 1000 de cilindrada y 1000 de kilometraje y devuelve una instancia de Camion' do
     controlador = ControladorDeEntrada.new('camion/1000/1000')
-    expect(controlador.tipo.class).to eq Camion
+    expect(controlador.crear_vehiculo.class).to eq Camion
   end
 
   it 'recibe moto, 1000 de cilindrada y 1000 de kilometraje y devuelve un error' do
-    expect{ ControladorDeEntrada.new('moto/1000/1000').tipo }.to raise_error(TipoVehiculoInvalido)
+    expect{ ControladorDeEntrada.new('moto/1000/1000').crear_vehiculo }.to raise_error(TipoVehiculoInvalido)
   end
 
   it 'recibe auto, 3000 de cilindrada y 1000 de kilometraje y devuelve un error' do
-    expect{ ControladorDeEntrada.new('auto/3000/1000').cilindrada }.to raise_error(CilindradaInvalida)
+    expect{ ControladorDeEntrada.new('auto/3000/1000').crear_vehiculo }.to raise_error(CilindradaInvalida)
+  end
+
+  xit 'recibe auto, 3000 de cilindrada y 1000 de kilometraje y devuelve un error' do
+    expect{ ControladorDeEntrada.new('auto/1000/-1000').crear_vehiculo }.to raise_error(KilometrjaeInvalido)
   end
 
 end
