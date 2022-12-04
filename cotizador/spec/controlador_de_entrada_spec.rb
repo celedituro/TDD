@@ -38,11 +38,11 @@ describe 'Controlador de entrada' do
   end
 
   it 'recibe moto, 1000 de cilindrada y 1000 de kilometraje y devuelve un error' do
-    expect{ ControladorDeEntrada.new('moto/1000/1000') }.to raise_error(TipoVehiculoInvalido)
+    expect{ ControladorDeEntrada.new('moto/1000/1000').tipo }.to raise_error(TipoVehiculoInvalido)
   end
 
   it 'recibe auto, 3000 de cilindrada y 1000 de kilometraje y devuelve un error' do
-    expect{ ControladorDeEntrada.new('auto/3000/1000') }.to raise_error(CilindradaInvalida)
+    expect{ ControladorDeEntrada.new('auto/3000/1000').cilindrada }.to raise_error(CilindradaInvalida)
   end
 
 end

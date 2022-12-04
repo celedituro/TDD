@@ -7,7 +7,7 @@ class FactoryCilindrada
                     2000 => 2000}
   end
 
-  def asginar_cilindrada(cilindrada)
+  def asignar_cilindrada(cilindrada)
     raise CilindradaInvalida unless @cilindradas.key?(cilindrada)
 
     @cilindradas[cilindrada]
