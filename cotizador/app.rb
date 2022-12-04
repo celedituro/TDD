@@ -6,11 +6,15 @@ require_relative './model/factory_tipo_vehiculo'
 require_relative './model/tipo_vehiculo'
 require_relative './model/factory_calculador_vm'
 require_relative './model/errors/tipo_vehiculo_invalido'
+require_relative './model/factory_cilindrada'
+require_relative './model/errors/cilindrada_invalida'
 
 begin
   controlador = ControladorDeEntrada.new(ARGV[0])
 rescue TipoVehiculoInvalido => e
-  raise e
+  puts e
+rescue CilindradaInvalida => e
+  puts e
 else
   valor_ci = CalculadorCI.new.calcular(controlador.tipo, controlador.cilindrada)
   calculador_vm = FactoryCalculadorVM.new.calculador(controlador.tipo)

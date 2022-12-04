@@ -1,4 +1,5 @@
 require_relative './errors/tipo_vehiculo_invalido'
+require_relative './errors/cilindrada_invalida'
 
 class ControladorDeEntrada
   CANT_ARGS = 3
@@ -13,10 +14,12 @@ class ControladorDeEntrada
     @args = args.split('/', CANT_ARGS)
     begin
       @tipo = FactoryTipoVehiculo.new.crear_vehiculo(parsear(INDICE_TIPO))
+      @cilindrada = FactoryCilindrada.new.asginar_cilindrada(parsear(INDICE_CILINDRADA).to_i)
     rescue TipoVehiculoInvalido => e
       raise e
+    rescue CilindradaInvalida => e
+      raise e
     else
-      @cilindrada = parsear(INDICE_CILINDRADA).to_i
       @kilometraje = parsear(INDICE_KILOMETRAJE).to_i
     end
   end
